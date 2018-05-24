@@ -89,6 +89,20 @@ And get the sentinel infomation with following commands
 docker-compose exec sentinel redis-cli -p 26379 SENTINEL get-master-addr-by-name mymaster
 ```
 
+Connect to the master node from local node
+```
+redis-cli -h localhost -p 6379
+localhost:6379> SET test test2
+```
+
+Connect to the slave node from local node
+```
+redis-cli -h localhost -p 6380
+localhost:6380> get test
+"test2"
+```
+ 
+
 ## References
 
 [https://github.com/AliyunContainerService/redis-cluster][1]
